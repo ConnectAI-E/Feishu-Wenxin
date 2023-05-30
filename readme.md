@@ -6,25 +6,16 @@
     <summary> 📷 点击展开企联AI完整功能</summary>
     <br>
     <p align='center'>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/8a589e42-c092-4878-83c3-dc12a801c2d6' alt='语音对话' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/263f647a-858e-4c4f-8eb9-4cc4d66c31fd' alt='角色扮演' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/39192ec8-9823-46c5-a56e-87fb1c9ce255' alt='角色扮演' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/8ff3decd-e0ae-436d-8f6f-4eb28f599866' alt='角色列表' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/92712155-eb0c-4dce-a005-c05a21dd8280' alt='文字成图' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/25cf595f-eaaf-4a52-8066-02afdc9fcdad' alt='余额查询' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/9ce7b941-2806-484c-94dc-0abc8e735a7f' alt='帮助菜单' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/d5128f44-53cc-4a49-9fd1-573bbb1fddff' alt='帮助菜单' width='800'/>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/43b52857-bde9-4c56-8cf1-bdafe31d4aaa' alt='帮助菜单' width='800'/>
     </p>
 </details>
 
 <br>
 
 <p align='center'>
-   飞书 ×（GPT-4 + DALL·E + Whisper）
+   飞书 × 文心一言
 <br>
 <br>
-    🚀 Feishu OpenAI 🚀
+    🚀 Feishu WenXin 🚀
 </p>
 
 <p align='center'>
@@ -94,7 +85,7 @@
 
 ## 🌟 项目特点
 
-- 🍏 对话基于 OpenAI-[gpt-3.5-turbo](https://platform.openai.com/account/api-keys) 接口
+- 🍏 对话基于 文心一言 (https://ai.baidu.com/wenxinworkshop/app/overview) 接口
 - 🍎 通过 lark，将 ChatGPT 接入[飞书](https://open.feishu.cn/app)和[飞书国际版](https://www.larksuite.com/)
 - 🥒
   支持[Serverless 云函数](https://github.com/serverless-devs/serverless-devs)、[本地环境](https://dashboard.cpolar.com/login)、[Docker](https://www.docker.com/)、[二进制安装包](https://github.com/Leizhenpeng/feishu-chatgpt/releases/)
@@ -110,7 +101,7 @@
 <br>
 
 ```bash
-git clone git@github.com:Leizhenpeng/feishu-chatgpt.git
+git clone git@github.com:Leizhenpeng/feishu-wenxin.git
 cd feishu-chatgpt/code
 ```
 
@@ -410,7 +401,7 @@ docker compose down
 </details>
 
 
-- 获取 [OpenAI](https://platform.openai.com/account/api-keys) 的 KEY( 🙉 下面有免费的 KEY 供大家测试部署 )
+- 获取 [OpenAI](https://platform.openai.com/account/api-keys) 的 KEY
 - 创建 [飞书](https://open.feishu.cn/) 机器人
     1. 前往[开发者平台](https://open.feishu.cn/app?lang=zh-CN)创建应用,并获取到 APPID 和 Secret
     2. 前往`应用功能-机器人`, 创建机器人
@@ -440,35 +431,13 @@ docker compose down
 
 更多介绍，参考[飞书上的小计算器: Go 机器人来啦](https://www.bilibili.com/video/BV12M41187rV/)
 
-## 免费 Openai_Key
-
-<a href='https://freeopenai.xyz/' >
-<img src='https://user-images.githubusercontent.com/50035229/229976556-99e8ac26-c8c3-4f56-902d-a52a7f2e50d5.png' alt='' width='330'/>
-</a>
-
-这里有些[免费的OpenAI Key](https://freeopenai.xyz/), 大家可测试使用。
-
 
 
 ## 一起交流
 
 遇到问题，可以加入飞书群沟通~
 
-<img src='https://user-images.githubusercontent.com/13283837/232570671-1058555f-c9e5-4f64-889b-1d8efd0101ba.png' alt='' width='200'/>
-
-
-## 企联AI
-开源社区：https://github.com/ConnectAI-E
-
-产品日志：https://connect-ai.forkway.cn/logs
-
-需求追踪：[为更好的「企联AI」~ ](https://fork-way.feishu.cn/base/CvaNbmt1KaUIIOsU8xiciqylnTd)
-
-bug反馈：https://fork-way.feishu.cn/share/base/form/shrcnYcag9Jvp71dUWKkBe3wPQd
-
-企业咨询：13995928702(River)
-
-<img width="400" src="https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/7912a8e9-2aa8-4235-a8be-4c323d248832">
+<img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/f1b93fb0-e3ed-4d08-be10-f40e5b1c88e4' alt='' width='200'/>
 
 
 
