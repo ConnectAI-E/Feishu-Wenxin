@@ -35,8 +35,8 @@
 查看更多内容: https://qiniai.com
 
 企业客户咨询: 15623677720
-https://www.qiniai.com/assets/contact-15c00beb.png
 
+<img width="400" src="https://www.qiniai.com/assets/contact-15c00beb.png">
 
 ## 👻 机器人功能
 
