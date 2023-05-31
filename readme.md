@@ -1,6 +1,7 @@
 <p align='center'>
-    <img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/263f647a-858e-4c4f-8eb9-4cc4d66c31fd' alt='' width='800'/>
+    <img src='https://github.com/ConnectAI-E/feishu-wenxin/assets/50035229/1761fc99-0527-4daa-8e87-2915c648d53d' alt='' width='800'/>
 </p>
+
 
 <details align='center'>
     <summary> 📷 点击展开企联AI完整功能</summary>
