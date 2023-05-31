@@ -7,6 +7,7 @@ import (
 
 	"start-feishubot/initialization"
 	"start-feishubot/services"
+	"start-feishubot/services/baidu"
 	"start-feishubot/services/openai"
 
 	larkcard "github.com/larksuite/oapi-sdk-go/v3/card"
@@ -28,6 +29,7 @@ type MessageHandler struct {
 	msgCache     services.MsgCacheInterface
 	gpt          *openai.ChatGPT
 	config       initialization.Config
+	wenxin       *baidu.WenXin
 }
 
 func (m MessageHandler) cardHandler(ctx context.Context,
@@ -109,12 +111,13 @@ func (m MessageHandler) msgReceivedHandler(ctx context.Context, event *larkim.P2
 var _ MessageHandlerInterface = (*MessageHandler)(nil)
 
 func NewMessageHandler(gpt *openai.ChatGPT,
-	config initialization.Config) MessageHandlerInterface {
+	config initialization.Config, wenxin *baidu.WenXin) MessageHandlerInterface {
 	return &MessageHandler{
 		sessionCache: services.GetSessionCache(),
 		msgCache:     services.GetMsgCache(),
 		gpt:          gpt,
 		config:       config,
+		wenxin:       wenxin,
 	}
 }
 
