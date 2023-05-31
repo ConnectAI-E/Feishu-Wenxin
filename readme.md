@@ -3,12 +3,7 @@
 </p>
 
 
-<details align='center'>
-    <summary> 📷 点击展开企联AI完整功能</summary>
-    <br>
-    <p align='center'>
-    </p>
-</details>
+
 
 <br>
 
@@ -24,7 +19,7 @@
 </p>
   
 <p align='center'>
-   https://fork-way.feishu.cn/docx/Gvztd1iVXoXOsVxF2ujcnPPenDf
+   www.qiniai.com
 </p>
 
 
@@ -37,7 +32,7 @@
 - 专人技术支持: 配备专业部署交付人员与后期一对一维护服务
 - 同时提供在线Saas版/企业级私有部署
 
-查看更多内容: https://connect-ai.forkway.cn
+查看更多内容: https://qiniai.com
 
 企业客户咨询: 13995928702(River)
 
@@ -66,21 +61,7 @@
 
 🎰 余额查询：即时获取token消耗情况
 
-🔙 历史回档：轻松回档历史对话，继续话题讨论 🚧
 
-🔒 管理员模式：内置管理员模式，使用更安全可靠 🚧
-
-🌐 多token负载均衡：优化生产级别的高频调用场景
-
-↩️ 支持反向代理：为不同地区的用户提供更快、更稳定的访问体验
-
-📚 与飞书文档互动：成为企业员工的超级助手 🚧
-
-🎥 话题内容秒转PPT：让你的汇报从此变得更加简单 🚧
-
-📊 表格分析：轻松导入飞书表格，提升数据分析效率 🚧
-
-🍊 私有数据训练：利用公司产品信息对GPT二次训练，更好地满足客户个性化需求 🚧
 
 
 
@@ -438,7 +419,6 @@ docker compose down
 
 遇到问题，可以加入飞书群沟通~
 
-<img src='https://github.com/ConnectAI-E/Feishu-OpenAI/assets/50035229/f1b93fb0-e3ed-4d08-be10-f40e5b1c88e4' alt='' width='200'/>
-
+<img src='https://github.com/ConnectAI-E/Feishu-Wenxin/assets/50035229/4b15d91e-cd65-4f2f-987a-7eba8326b017' alt='' width='200'/>
 
 
