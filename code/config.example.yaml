@@ -25,3 +25,6 @@ AZURE_RESOURCE_NAME: xxxx   # you can find in endpoint url. Usually looks like h
 AZURE_DEPLOYMENT_NAME: xxxx # usually looks like ...openai.azure.com/openai/deployments/{DEPLOYMENT_NAME}/chat/completions.
 AZURE_OPENAI_TOKEN: xxxx  # Authentication key. We can use Azure Active Directory Authentication(TBD).
 
+# 百度
+WENXIN_CLIENT_ID: xxx
+WENXIN_CLIENT_SECRET: xxx

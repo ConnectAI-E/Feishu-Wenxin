@@ -14,6 +14,7 @@ require (
 	github.com/pion/opus v0.0.0-20230123082803-1052c3e89e58
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.14.0
+	github.com/zjy282/ernie-api v0.2.1
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -28,6 +29,7 @@ require (
 	github.com/go-playground/validator/v10 v10.11.1 // indirect
 	github.com/go-sourcemap/sourcemap v2.1.3+incompatible // indirect
 	github.com/goccy/go-json v0.10.0 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/pprof v0.0.0-20230309165930-d61513b1440d // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
