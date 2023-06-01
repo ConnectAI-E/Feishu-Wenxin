@@ -202,37 +202,6 @@ s deploy
 </details>
 
 <details>
-    <summary>使用 Railway 平台一键部署</summary>
-
-
-Railway 是一家国外的 Serverless 平台，支持多种语言，可以一键将 GitHub 上的代码仓库部署到 Railway 平台，然后在 Railway
-平台上配置环境变量即可。部署本项目的流程如下：
-
-#### 1. 生成 Railway 项目
-
-点击下方按钮即可创建一个对应的 Railway 项目，其会自动 Fork 本项目到你的 GitHub 账号下。
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/10D-TF?referralCode=oMcVS2)
-
-#### 2. 配置环境变量
-
-在打开的页面中，配置环境变量，每个变量的说明如下图所示：
-
-
-<img src='https://user-images.githubusercontent.com/50035229/225005602-88d8678f-9d17-4dc5-8d1e-4abf64fb84fd.png' alt='Railway 环境变量' width='500px'/>
-
-#### 3. 部署项目
-
-填写完环境变量后，点击 Deploy 就完成了项目的部署。部署完成后还需获取对应的域名用于飞书机器人访问，如下图所示：
-
-<img src='https://user-images.githubusercontent.com/50035229/225006236-57cb3c8a-1b7d-4bfe-9c9b-099cb9179027.png' alt='Railway 域名' width='500px'/>
-
-如果不确定自己部署是否成功，可以通过访问上述获取到的域名 (https://xxxxxxxx.railway.app/ping) 来查看是否返回了`pong`
-，如果返回了`pong`，说明部署成功。
-
-</details>
-
-<details>
     <summary>docker部署</summary>
 <br>
 
@@ -244,18 +213,16 @@ docker run -d --name feishu-chatgpt -p 9000:9000 \
 --env APP_ENCRYPT_KEY=xxx \
 --env APP_VERIFICATION_TOKEN=xxx \
 --env BOT_NAME=chatGpt \
---env OPENAI_KEY="sk-xxx1,sk-xxx2,sk-xxx3" \
---env API_URL="https://api.openai.com" \
---env HTTP_PROXY="" \
+--env WENXIN_CLIENT_ID="xxx" \
+--env WENXIN_CLIENT_SECRET="xxx" \
 feishu-chatgpt:latest
 ```
 
 注意:
 
 - `BOT_NAME` 为飞书机器人名称，例如 `chatGpt`
-- `OPENAI_KEY` 为openai key，多个key用逗号分隔，例如 `sk-xxx1,sk-xxx2,sk-xxx3`
-- `HTTP_PROXY` 为宿主机的proxy地址，例如 `http://host.docker.internal:7890`,没有代理的话，可以不用设置
-- `API_URL` 为openai api 接口地址，例如 `https://api.openai.com`, 没有反向代理的话，可以不用设置
+
+
 
 ---
 
@@ -270,10 +237,9 @@ docker run -d --restart=always --name feishu-chatgpt2 -p 9000:9000 -v /etc/local
 --env APP_ENCRYPT_KEY=xxx \
 --env APP_VERIFICATION_TOKEN=xxx \
 --env BOT_NAME=chatGpt \
---env OPENAI_KEY="sk-xxx1,sk-xxx2,sk-xxx3" \
---env API_URL=https://api.openai.com \
---env HTTP_PROXY="" \
-dockerproxy.com/leizhenpeng/feishu-chatgpt:latest
+--env WENXIN_CLIENT_ID="xxx" \
+--env WENXIN_CLIENT_SECRET="xxx" \
+dockerproxy.com/leizhenpeng/feishu-wenxin:latest
 ```
 
 事件回调地址: http://IP:9000/webhook/event
@@ -282,33 +248,6 @@ dockerproxy.com/leizhenpeng/feishu-chatgpt:latest
 把它填入飞书后台
 
 --- 
-
-部署azure版本
-
-```bash
-docker build -t feishu-chatgpt:latest .
-docker run -d --name feishu-chatgpt -p 9000:9000 \
---env APP_ID=xxx \
---env APP_SECRET=xxx \
---env APP_ENCRYPT_KEY=xxx \
---env APP_VERIFICATION_TOKEN=xxx \
---env BOT_NAME=chatGpt \
---env AZURE_ON=true \
---env AZURE_API_VERSION=xxx \
---env AZURE_RESOURCE_NAME=xxx \
---env AZURE_DEPLOYMENT_NAME=xxx \
---env AZURE_OPENAI_TOKEN=xxx \
-feishu-chatgpt:latest
-```
-
-注意:
-
-- `BOT_NAME` 为飞书机器人名称，例如 `chatGpt`
-- `AZURE_ON` 为是否使用azure ,请填写 `true`
-- `AZURE_API_VERSION` 为azure api版本 例如 `2023-03-15-preview`
-- `AZURE_RESOURCE_NAME` 为azure 资源名称 类似 `https://{AZURE_RESOURCE_NAME}.openai.azure.com`
-- `AZURE_DEPLOYMENT_NAME` 为azure 部署名称 类似 `https://{AZURE_RESOURCE_NAME}.openai.azure.com/deployments/{AZURE_DEPLOYMENT_NAME}/chat/completions`
-- `AZURE_OPENAI_TOKEN` 为azure openai token
 
 </details>
 
@@ -340,7 +279,6 @@ docker compose down
 
 1. 进入[release 页面](https://github.com/Leizhenpeng/feishu-wenxin/releases/) 下载对应的安装包
 2. 解压安装包,修改 config.example.yml 中配置信息,另存为 config.yaml
-3. 目录下添加文件 `role_list.yaml`，自定义角色，可以从这里获取：[链接](https://github.com/Leizhenpeng/feishu-chatgpt/blob/master/code/role_list.yaml)
 3. 运行程序入口文件 `feishu-chatgpt`
 
 事件回调地址: http://IP:9000/webhook/event
