@@ -42,7 +42,6 @@
 
 💬 多话题对话：支持私人和群聊多话题讨论，高效连贯
 
-
 🔄 上下文保留：回复对话框即可继续同一话题讨论
 
 ⏰ 自动结束：超时自动结束对话，支持清除讨论历史
@@ -221,7 +220,8 @@ feishu-chatgpt:latest
 注意:
 
 - `BOT_NAME` 为飞书机器人名称，例如 `chatGpt`
-
+-  `WENXIN_CLIENT_ID` 为文心一言应用的 `API_Key`
+-  `WENXIN_CLIENT_SECRET` 为文心一言应用的 `Secret_Key`
 
 
 ---
@@ -310,7 +310,7 @@ docker compose down
 </details>
 
 
-- 获取 [OpenAI](https://platform.openai.com/account/api-keys) 的 KEY
+- 获取 [文心一言](https://console.bce.baidu.com/ai/#/ai/wenxinworkshop/app/list) 的 API_Key、Secret_Key
 - 创建 [飞书](https://open.feishu.cn/) 机器人
     1. 前往[开发者平台](https://open.feishu.cn/app?lang=zh-CN)创建应用,并获取到 APPID 和 Secret
     2. 前往`应用功能-机器人`, 创建机器人
