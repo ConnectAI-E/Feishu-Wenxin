@@ -4,6 +4,17 @@
 
 
 
+<details align='center'>
+    <summary> 📷 点击展开完整功能</summary>
+    <br>
+    <p align='center'>
+    <img src='https://github.com/ConnectAI-E/Feishu-Wenxin/assets/50035229/5c93f949-3487-4910-b952-94eb5fc31d5a' alt='联系上下文' width='800'/>
+    <img src='https://github.com/ConnectAI-E/Feishu-Wenxin/assets/50035229/bcc410b0-c50d-40a6-a751-1828a4905bd1' alt='帮助列表' width='800'/>
+    </p>
+</details>
+
+
+
 
 <br>
 
@@ -23,20 +34,7 @@
 </p>
 
 
-## 商业支持
 
-如果开源版无法满足您公司的需求，推荐您尝试的商业共创版
-
-- 内置开箱即用的Azure Openai: 无需部署到海外，即可获得数十倍的性能提升
-- 掌控全局的Admin Panel: AI资源管理、对话日志查询、风险词规避和对话权限管理
-- 专人技术支持: 配备专业部署交付人员与后期一对一维护服务
-- 同时提供在线Saas版/企业级私有部署
-
-查看更多内容: https://qiniai.com
-
-企业客户咨询: 15623677720
-
-<img width="400" src="https://www.qiniai.com/assets/contact-15c00beb.png">
 
 ## 👻 机器人功能
 
@@ -44,13 +42,6 @@
 
 💬 多话题对话：支持私人和群聊多话题讨论，高效连贯
 
-🖼 文本成图：支持文本成图和以图搜图
-
-🛖 场景预设：内置丰富场景列表，一键切换AI角色
-
-🎭 角色扮演：支持场景模式，增添讨论乐趣和创意
-
-🤖 AI模式：内置4种AI模式，感受AI的智慧与创意
 
 🔄 上下文保留：回复对话框即可继续同一话题讨论
 
@@ -60,8 +51,6 @@
 
 👍 交互式反馈：即时获取机器人处理结果
 
-🎰 余额查询：即时获取token消耗情况
-
 
 
 
@@ -69,9 +58,8 @@
 ## 🌟 项目特点
 
 - 🍏 对话基于 文心一言 (https://ai.baidu.com/wenxinworkshop/app/overview) 接口
-- 🍎 通过 lark，将 ChatGPT 接入[飞书](https://open.feishu.cn/app)和[飞书国际版](https://www.larksuite.com/)
-- 🥒
-  支持[Serverless 云函数](https://github.com/serverless-devs/serverless-devs)、[本地环境](https://dashboard.cpolar.com/login)、[Docker](https://www.docker.com/)、[二进制安装包](https://github.com/Leizhenpeng/feishu-chatgpt/releases/)
+- 🍎 将 ChatGPT 接入[飞书](https://open.feishu.cn/app)和[飞书国际版](https://www.larksuite.com/)
+- 🥒 支持[Serverless 云函数](https://github.com/serverless-devs/serverless-devs)、[本地环境](https://dashboard.cpolar.com/login)、[Docker](https://www.docker.com/)、[二进制安装包](https://github.com/Leizhenpeng/feishu-chatgpt/releases/)
   等多种渠道部署
 - 🍋 基于[goCache](https://github.com/patrickmn/go-cache)内存键值对缓存
 
@@ -125,8 +113,8 @@ kill -9 PID
 <br>
 
 ```bash
-git clone git@github.com:Leizhenpeng/feishu-chatgpt.git
-cd feishu-chatgpt/code
+git clone git@github.com:Leizhenpeng/feishu-wenxin.git
+cd feishu-wenxin/code
 ```
 
 安装[severless](https://docs.serverless-devs.com/serverless-devs/quick_start)工具
@@ -146,7 +134,7 @@ npm install @serverless-devs/s -g
 
 ```
 edition: 1.0.0
-name: feishuBot-chatGpt
+name: feishuBot-wenxin
 access: "aliyun" #  修改自定义的秘钥别称
 
 vars: # 全局变量
@@ -350,7 +338,7 @@ docker compose down
     <summary>二进制安装包部署</summary>
 <br>
 
-1. 进入[release 页面](https://github.com/Leizhenpeng/feishu-chatgpt/releases/) 下载对应的安装包
+1. 进入[release 页面](https://github.com/Leizhenpeng/feishu-wenxin/releases/) 下载对应的安装包
 2. 解压安装包,修改 config.example.yml 中配置信息,另存为 config.yaml
 3. 目录下添加文件 `role_list.yaml`，自定义角色，可以从这里获取：[链接](https://github.com/Leizhenpeng/feishu-chatgpt/blob/master/code/role_list.yaml)
 3. 运行程序入口文件 `feishu-chatgpt`
@@ -414,7 +402,20 @@ docker compose down
 
 更多介绍，参考[飞书上的小计算器: Go 机器人来啦](https://www.bilibili.com/video/BV12M41187rV/)
 
+## 商业支持
 
+如果开源版无法满足您公司的需求，推荐您尝试企联AI的商业共创版
+
+- 内置开箱即用的Azure Openai: 无需部署到海外，即可获得数十倍的性能提升
+- 掌控全局的Admin Panel: AI资源管理、对话日志查询、风险词规避和对话权限管理
+- 专人技术支持: 配备专业部署交付人员与后期一对一维护服务
+- 同时提供在线Saas版/企业级私有部署
+
+查看更多内容: https://qiniai.com
+
+企业客户咨询: 15623677720
+
+<img width="400" src="https://www.qiniai.com/assets/contact-15c00beb.png">
 
 ## 一起交流
 
