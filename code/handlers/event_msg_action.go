@@ -2,10 +2,8 @@ package handlers
 
 import (
 	"fmt"
-
-	"start-feishubot/services/openai"
-
 	ernieapi "github.com/zjy282/ernie-api"
+	"start-feishubot/services/openai"
 )
 
 type wenxinMsg = openai.Messages
@@ -21,6 +19,7 @@ func (*MessageAction) Execute(a *ActionInfo) bool {
 	// get ai mode as temperature
 	// aiMode := a.handler.sessionCache.GetAIMode(*a.info.sessionId)
 	completions, err := a.handler.wenxin.Completions(msg)
+	//pp.Print("completions", completions)
 	if err != nil {
 		replyMsg(*a.ctx, fmt.Sprintf(
 			"🤖️：消息机器人摆烂了，请稍后再试～\n错误信息: %v", err), a.info.msgId)

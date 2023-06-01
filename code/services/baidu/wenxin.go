@@ -52,5 +52,8 @@ func (wenxin *WenXin) Completions(msg []api.ChatRequestMessage) (resp api.ChatRe
 		fmt.Println(string(data))
 	}
 
-	return api.ChatRequestMessage{}, nil
+	return api.ChatRequestMessage{
+		Role:    "assistant",
+		Content: response.Result,
+	}, nil
 }
