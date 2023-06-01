@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/patrickmn/go-cache"
+	ernieapi "github.com/zjy282/ernie-api"
 )
 
 type SessionMode string
@@ -38,6 +39,8 @@ type SessionServiceCacheInterface interface {
 	Get(sessionId string) *SessionMeta
 	Set(sessionId string, sessionMeta *SessionMeta)
 	GetMsg(sessionId string) []openai.Messages
+	GetWXMsg(sessionId string) []ernieapi.ChatRequestMessage
+	SetWXMsg(sessionId string, msg []ernieapi.ChatRequestMessage)
 	SetMsg(sessionId string, msg []openai.Messages)
 	SetMode(sessionId string, mode SessionMode)
 	GetMode(sessionId string) SessionMode
@@ -119,6 +122,30 @@ func (s *SessionService) GetMsg(sessionId string) (msg []openai.Messages) {
 	}
 	sessionMeta := sessionContext.(*SessionMeta)
 	return sessionMeta.Msg
+}
+
+func (s *SessionService) GetWXMsg(sessionId string) (msg []ernieapi.ChatRequestMessage) {
+	sessionContext, ok := s.cache.Get(sessionId)
+	if !ok {
+		return nil
+	}
+	return sessionContext.([]ernieapi.ChatRequestMessage)
+}
+
+func (s *SessionService) SetWXMsg(sessionId string, msg []ernieapi.ChatRequestMessage) {
+	// maxLength := 4096
+	maxCacheTime := time.Hour * 12
+
+	//限制对话上下文长度
+	// for getStrPoolTotalLength(msg) > maxLength {
+	// 	msg = append(msg[:1], msg[2:]...)
+	// }
+	s.cache.Set(sessionId, msg, maxCacheTime)
+	// sessionContext, ok := s.cache.Get(sessionId)
+	// if !ok {
+	// 	s.cache.Set(sessionId, msg, maxCacheTime)
+	// 	return
+	// }
 }
 
 func (s *SessionService) SetMsg(sessionId string, msg []openai.Messages) {

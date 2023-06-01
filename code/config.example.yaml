@@ -19,3 +19,6 @@ KEY_FILE: key.pem
 
 
 
+# 百度
+WENXIN_CLIENT_ID: xxx
+WENXIN_CLIENT_SECRET: xxx

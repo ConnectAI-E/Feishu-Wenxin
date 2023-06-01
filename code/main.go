@@ -6,6 +6,7 @@ import (
 
 	"start-feishubot/handlers"
 	"start-feishubot/initialization"
+	"start-feishubot/services/baidu"
 	"start-feishubot/services/openai"
 
 	"github.com/gin-gonic/gin"
@@ -26,7 +27,8 @@ func main() {
 	config := initialization.LoadConfig(*cfg)
 	initialization.LoadLarkClient(*config)
 	gpt := openai.NewChatGPT(*config)
-	handlers.InitHandlers(gpt, *config)
+	wenxin := baidu.LoadWenXin(*config)
+	handlers.InitHandlers(gpt, *config, wenxin)
 
 	eventHandler := dispatcher.NewEventDispatcher(
 		config.FeishuAppVerificationToken, config.FeishuAppEncryptKey).

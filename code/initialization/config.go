@@ -28,6 +28,8 @@ type Config struct {
 	AzureDeploymentName        string
 	AzureResourceName          string
 	AzureOpenaiToken           string
+	WenXinClientId             string
+	WenXinClientSecret         string
 }
 
 func LoadConfig(cfg string) *Config {
@@ -59,6 +61,8 @@ func LoadConfig(cfg string) *Config {
 		AzureDeploymentName:        getViperStringValue("AZURE_DEPLOYMENT_NAME", ""),
 		AzureResourceName:          getViperStringValue("AZURE_RESOURCE_NAME", ""),
 		AzureOpenaiToken:           getViperStringValue("AZURE_OPENAI_TOKEN", ""),
+		WenXinClientId:             getViperStringValue("WENXIN_CLIENT_ID", ""),
+		WenXinClientSecret:         getViperStringValue("WENXIN_CLIENT_SECRET", ""),
 	}
 
 	return config

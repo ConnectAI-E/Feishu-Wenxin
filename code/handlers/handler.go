@@ -7,6 +7,7 @@ import (
 
 	"start-feishubot/initialization"
 	"start-feishubot/services"
+	"start-feishubot/services/baidu"
 	"start-feishubot/services/openai"
 
 	larkcard "github.com/larksuite/oapi-sdk-go/v3/card"
@@ -28,6 +29,7 @@ type MessageHandler struct {
 	msgCache     services.MsgCacheInterface
 	gpt          *openai.ChatGPT
 	config       initialization.Config
+	wenxin       *baidu.WenXin
 }
 
 func (m MessageHandler) cardHandler(ctx context.Context,
@@ -90,16 +92,14 @@ func (m MessageHandler) msgReceivedHandler(ctx context.Context, event *larkim.P2
 	actions := []Action{
 		&ProcessedUniqueAction{}, //避免重复处理
 		&ProcessMentionAction{},  //判断机器人是否应该被调用
-		&AudioAction{},           //语音处理
 		&EmptyAction{},           //空消息处理
 		&ClearAction{},           //清除消息处理
-		&PicAction{},             //图片处理
-		&AIModeAction{},          //模式切换处理
-		&RoleListAction{},        //角色列表处理
-		&HelpAction{},            //帮助处理
-		&BalanceAction{},         //余额处理
-		&RolePlayAction{},        //角色扮演处理
-		&MessageAction{},         //消息处理
+		//&AIModeAction{},          //模式切换处理
+		//&RoleListAction{}, //角色列表处理
+		&HelpAction{}, //帮助处理
+		//&BalanceAction{},         //余额处理
+		&RolePlayAction{}, //角色扮演处理
+		&MessageAction{},  //消息处理
 
 	}
 	chain(data, actions...)
@@ -109,12 +109,13 @@ func (m MessageHandler) msgReceivedHandler(ctx context.Context, event *larkim.P2
 var _ MessageHandlerInterface = (*MessageHandler)(nil)
 
 func NewMessageHandler(gpt *openai.ChatGPT,
-	config initialization.Config) MessageHandlerInterface {
+	config initialization.Config, wenxin *baidu.WenXin) MessageHandlerInterface {
 	return &MessageHandler{
 		sessionCache: services.GetSessionCache(),
 		msgCache:     services.GetMsgCache(),
 		gpt:          gpt,
 		config:       config,
+		wenxin:       wenxin,
 	}
 }
 
