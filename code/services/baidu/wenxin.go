@@ -2,57 +2,48 @@ package baidu
 
 import (
 	"context"
-	"encoding/json"
-	"fmt"
-
+	"github.com/ConnectAI-E/go-wenxin/baidubce"
+	ai_customv1 "github.com/ConnectAI-E/go-wenxin/gen/go/baidubce/ai_custom/v1"
+	baidubcev1 "github.com/ConnectAI-E/go-wenxin/gen/go/baidubce/v1"
 	"start-feishubot/initialization"
-
-	api "github.com/zjy282/ernie-api"
 )
 
 type WenXin struct {
-	client *api.Client
+	Client *baidubce.Client
 }
 
 func LoadWenXin(config initialization.Config) *WenXin {
-	ctx := context.Background()
-	req := &api.OAuthTokenRequest{
-		ClientID:     config.WenXinClientId,
+	var opts []baidubce.Option
+	opts = append(opts, baidubce.WithTokenRequest(&baidubcev1.TokenRequest{
+		GrantType:    "client_credentials",
+		ClientId:     config.WenXinClientId,
 		ClientSecret: config.WenXinClientSecret,
-	}
+	}))
 
-	// token有效期30天
-	response, err := api.CreateBCEOAuthToken(ctx, req)
+	client, err := baidubce.New(opts...)
 	if err != nil {
 		panic(err)
 	}
-	client := api.NewClientWithConfig(api.DefaultBCEConfig(response.AccessToken))
-
 	return &WenXin{
-		client: client,
+		Client: client,
 	}
 }
 
-func (wenxin *WenXin) Completions(msg []api.ChatRequestMessage) (resp api.ChatRequestMessage, err error) {
-
+func (wenxin *WenXin) Completions(msg []*ai_customv1.
+	Message) (
+	resp *ai_customv1.Message, err error) {
 	ctx := context.Background()
-	req := &api.ChatRequest{
-		User:     "test",
+	req := &ai_customv1.ChatCompletionsRequest{
+		User:     "feishu-user",
 		Messages: msg,
 	}
-	response, err := wenxin.client.CreateChat(ctx, req)
+	response, err := wenxin.Client.ChatCompletions(ctx, req)
 
 	if err != nil {
-		return api.ChatRequestMessage{}, err
+		return nil, err
 	}
 
-	if data, err := json.Marshal(response); err != nil {
-		fmt.Println(err.Error())
-	} else {
-		fmt.Println(string(data))
-	}
-
-	return api.ChatRequestMessage{
+	return &ai_customv1.Message{
 		Role:    "assistant",
 		Content: response.Result,
 	}, nil
