@@ -56,8 +56,8 @@
 
 ## 🌟 项目特点
 
-- 🍏 对话基于 文心一言 (https://ai.baidu.com/wenxinworkshop/app/overview) 接口
-- 🍎 将 ChatGPT 接入[飞书](https://open.feishu.cn/app)和[飞书国际版](https://www.larksuite.com/)
+- 🍏 对话基于 文心一言 (https://ai.baidu.com/wenxinworkshop/app/overview) 接口 和 [go-wenxin](https://github.com/ConnectAI-E/go-wenxin) SDK
+- 🍎 将 文心一言 接入[飞书](https://open.feishu.cn/app)和[飞书国际版](https://www.larksuite.com/)
 - 🥒 支持[Serverless 云函数](https://github.com/serverless-devs/serverless-devs)、[本地环境](https://dashboard.cpolar.com/login)、[Docker](https://www.docker.com/)、[二进制安装包](https://github.com/Leizhenpeng/feishu-chatgpt/releases/)
   等多种渠道部署
 - 🍋 基于[goCache](https://github.com/patrickmn/go-cache)内存键值对缓存
