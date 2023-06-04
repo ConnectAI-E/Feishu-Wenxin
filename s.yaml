@@ -1,9 +1,9 @@
 edition: 1.0.0
-name: feishuBot-chatGpt
+name: feishuBot-bot
 access: "aliyun" #  秘钥别名
 
 vars: # 全局变量
-  region: "ap-southeast-1"
+  region: "cn-hangzhou"
 
 services:
   helloworld:
@@ -25,7 +25,7 @@ services:
         name: "feishubot"
         description: "Serverless Devs Website Service"
       function:
-        name: "feishu-chatgpt"
+        name: "feishu-wenxin"
         description: 'a simple feishubot by serverless devs'
         codeUri: './code'
         caPort: 9000
@@ -36,7 +36,7 @@ services:
         handler: index.handler
         instanceConcurrency: 20
         instanceType: e1
-        memorySize: 128
+        memorySize: 256
         runtime: custom
         timeout: 120
         internetAccess: true
