@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"fmt"
-	ernieapi "github.com/zjy282/ernie-api"
+	ai_customv1 "github.com/ConnectAI-E/go-wenxin/gen/go/baidubce/ai_custom/v1"
 	"start-feishubot/services/openai"
 )
 
@@ -13,7 +13,7 @@ type MessageAction struct { /*消息*/
 
 func (*MessageAction) Execute(a *ActionInfo) bool {
 	msg := a.handler.sessionCache.GetWXMsg(*a.info.sessionId)
-	msg = append(msg, ernieapi.ChatRequestMessage{
+	msg = append(msg, &ai_customv1.Message{
 		Role: "user", Content: a.info.qParsed,
 	})
 	// get ai mode as temperature

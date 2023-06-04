@@ -1,11 +1,11 @@
 package services
 
 import (
+	ai_customv1 "github.com/ConnectAI-E/go-wenxin/gen/go/baidubce/ai_custom/v1"
 	"start-feishubot/services/openai"
 	"time"
 
 	"github.com/patrickmn/go-cache"
-	ernieapi "github.com/zjy282/ernie-api"
 )
 
 type SessionMode string
@@ -39,8 +39,8 @@ type SessionServiceCacheInterface interface {
 	Get(sessionId string) *SessionMeta
 	Set(sessionId string, sessionMeta *SessionMeta)
 	GetMsg(sessionId string) []openai.Messages
-	GetWXMsg(sessionId string) []ernieapi.ChatRequestMessage
-	SetWXMsg(sessionId string, msg []ernieapi.ChatRequestMessage)
+	GetWXMsg(sessionId string) []*ai_customv1.Message
+	SetWXMsg(sessionId string, msg []*ai_customv1.Message)
 	SetMsg(sessionId string, msg []openai.Messages)
 	SetMode(sessionId string, mode SessionMode)
 	GetMode(sessionId string) SessionMode
@@ -124,15 +124,17 @@ func (s *SessionService) GetMsg(sessionId string) (msg []openai.Messages) {
 	return sessionMeta.Msg
 }
 
-func (s *SessionService) GetWXMsg(sessionId string) (msg []ernieapi.ChatRequestMessage) {
+func (s *SessionService) GetWXMsg(sessionId string) (
+	msg []*ai_customv1.Message) {
 	sessionContext, ok := s.cache.Get(sessionId)
 	if !ok {
 		return nil
 	}
-	return sessionContext.([]ernieapi.ChatRequestMessage)
+	return sessionContext.([]*ai_customv1.Message)
 }
 
-func (s *SessionService) SetWXMsg(sessionId string, msg []ernieapi.ChatRequestMessage) {
+func (s *SessionService) SetWXMsg(sessionId string,
+	msg []*ai_customv1.Message) {
 	// maxLength := 4096
 	maxCacheTime := time.Hour * 12
 
