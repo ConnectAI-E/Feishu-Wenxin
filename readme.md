@@ -1,5 +1,7 @@
 <p align='center'>
-    <img src='https://github.com/ConnectAI-E/feishu-wenxin/assets/50035229/1761fc99-0527-4daa-8e87-2915c648d53d' alt='' width='800'/>
+    <a href='https://qiniai.com' target="_blank" rel="noopener noreferrer">
+    <img src='https://user-images.githubusercontent.com/50035229/241976353-1761fc99-0527-4daa-8e87-2915c648d53d.png' alt='' width='800'/>
+    </a>
 </p>
 
 
