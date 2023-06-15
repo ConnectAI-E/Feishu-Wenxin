@@ -87,7 +87,7 @@
 
 ```bash
 git clone git@github.com:Leizhenpeng/feishu-wenxin.git
-cd feishu-chatgpt/code
+cd feishu-wenxin/code
 ```
 
 如果你的服务器没有公网 IP，可以使用反向代理的方式
