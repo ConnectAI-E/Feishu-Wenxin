@@ -364,7 +364,7 @@ docker compose down
 - 专人技术支持: 配备专业部署交付人员与后期一对一维护服务
 - 同时提供在线Saas版/企业级私有部署
 
-查看更多内容: https://qiniai.com
+查看更多内容: https://www.connectai-e.com
 
 企业咨询：15123308040
 
